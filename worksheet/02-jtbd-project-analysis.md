@@ -9,409 +9,167 @@ companion-reference: Strategyn_JTBD_Playbook.pdf (giảng viên gửi kèm)
 
 # Lab 2 — JTBD Project Analysis / Dùng JTBD để soi lại dự án nhóm
 
-**Tên dự án / sản phẩm:** _______________  
+**Tên dự án / sản phẩm:** Trợ Lý Đặt Xe An Toàn (V-VoiceRide)
 
-> Đây là **file duy nhất** của Lab 2.  
-> File này đồng thời đóng vai trò:
->
-> - guide từng bước,
-> - worksheet để điền trực tiếp,
-> - và file nộp cuối cho người chấm.
-
-Mục tiêu của bài này không phải brainstorm thêm thật nhiều tính năng AI.
-Mục tiêu là:
-
-1. **xác định người dùng thực sự đang cố hoàn thành job gì**
-2. **hiểu họ đang dùng giải pháp nào để hoàn thành job đó hôm nay**
-3. **chỉ ra AI nên chen vào đúng bước nào trong workflow**
-4. **viết ra product hypothesis và assumption còn phải validate**
-
-Quy tắc xuyên suốt: **không rõ job thì đừng bàn feature.**
-
----
-
-## Cần mở song song 2 thứ
-
-1. **File này** — để điền trực tiếp
-2. **`Strategyn_JTBD_Playbook.pdf`** — giảng viên gửi kèm
-
-### Cách dùng playbook cho đúng
-
-Bạn **không cần đọc hết 48 trang**.  
-Trong bài này, playbook chủ yếu dùng để tra 4 thứ:
-
-1. **Cách nhìn thị trường qua JTBD lens**
-2. **`Job executor` là ai**
-3. **Cách viết `job statement`: `verb + object + contextual clarifier`**
-4. **8 bước của `job map`**:
-   `define -> locate -> prepare -> confirm -> execute -> monitor -> modify -> conclude`
-
-### 2 chương nên mở nhiều nhất
-
-- **Chapter 2 — Define Your Market**
-- **Chapter 3 — Build Your Job Map**
-
-> Dùng playbook để **tra framework và ví dụ**.  
-> Dùng file này để **làm bài và chốt output**.
-
----
-
-## Đầu ra bắt buộc
-
-Người chấm cần thấy đủ 6 phần trong chính file này:
-
-1. **`Project slice` + market context**
-2. **`Job executor` + `core JTBD`**
-3. **3 `job stories`**
-4. **`JTBD lite map` + pain points**
-5. **`AI leverage point` + `product hypothesis`**
-6. **`Assumptions to validate` + verdict cuối sau thảo luận**
-
-Nếu thiếu một trong sáu phần trên, bài sẽ bị xem là chưa hoàn chỉnh.
-
----
-
-## Cách làm trong lớp (25 phút)
-
-```text
-3'  Chốt 1 lát cắt cụ thể của dự án
-7'  Viết market context + job executor + core JTBD
-6'  Viết 3 job stories + current alternatives
-6'  Điền JTBD lite map + AI leverage point + hypothesis
-3'  Share trong bàn và sửa version cuối
-```
-
-> Nếu dự án làm theo nhóm, cả nhóm có thể thảo luận chung.  
-> Nhưng file này vẫn nên có **version chốt rõ ràng** của người nộp.
-
----
+> Nguồn đầu vào cho bản phân tích: Product Brief, PRD và Strategyn JTBD Playbook.
+> Những mô tả về hành vi người dùng chưa được kiểm chứng bằng phỏng vấn được ghi rõ là giả thuyết cần validate.
 
 ## Bước 0 — Khoanh đúng 1 lát cắt của dự án
 
-Phần lớn dự án nhóm viết quá rộng ở bước này, rồi sau đó mọi thứ mơ hồ theo.
+- [x] **1 nhóm người dùng chính**
+- [x] **1 hoàn cảnh / tình huống rõ**
+- [x] **1 job cốt lõi**
+- [x] **1 workflow đủ cụ thể để vẽ ra được**
 
-### Khoanh đúng 1 lát cắt theo 4 điểm
+- **Dự án của nhóm tôi là:** Trợ lý giúp người dùng đặt một chuyến xe giả lập bằng hội thoại tiếng Việt, có cơ chế hỏi lại, sửa thông tin và xác nhận an toàn.
+- **Lát cắt tôi chọn để phân tích hôm nay là:** Người lớn tuổi hoặc ít thành thạo công nghệ tự sắp xếp chuyến xe đi bệnh viện trong trường hợp khó nhập địa chỉ và kiểm tra thông tin trên ứng dụng.
+- **Vì sao tôi chọn lát cắt này:**
+  > Đây là primary journey rõ nhất trong PRD, có rủi ro thực tế nếu điểm đón/điểm đến bị hiểu sai và có workflow đủ cụ thể để phân tích. Lát cắt này cũng buộc nhóm đánh giá giá trị của AI qua khả năng giúp user hoàn thành job an toàn, thay vì chỉ trình diễn voice interface.
 
-- [ ] **1 nhóm người dùng chính**
-- [ ] **1 hoàn cảnh / tình huống rõ**
-- [ ] **1 job cốt lõi**
-- [ ] **1 workflow đủ cụ thể để vẽ ra được**
+## Bước 1 — `Project Snapshot`
 
-### Điền nhanh trước khi làm
+1. **Nhóm tôi đang nghĩ mình đang giải quyết vấn đề gì?**
+   > Một số người lớn tuổi hoặc ít rành công nghệ gặp khó khăn khi nhập địa chỉ, đọc thông tin nhỏ, xử lý nhiều lựa chọn và sửa dữ liệu sai trong ứng dụng gọi xe. Điều này làm họ khó tự đặt chuyến và có thể dẫn đến sai điểm đón, sai điểm đến hoặc lên nhầm xe.
 
-- **Dự án của nhóm tôi là:** ___________________________________
-- **Lát cắt tôi chọn để phân tích hôm nay là:** ___________________________________
-- **Vì sao tôi chọn lát cắt này:**  
-  > ___________________________________
+2. **Người dùng chính hiện nhóm đang nhắm tới là ai?**
+   > Người lớn tuổi hoặc người ít thành thạo ứng dụng đặt xe, vẫn có nhu cầu tự sắp xếp chuyến đi bằng điện thoại. Người khiếm thị và người bận tay/mắt là secondary personas, không phải lát cắt chính của bài này.
 
-### Viết quá rộng vs viết sắc hơn
+3. **Hiện tại người dùng đó đang giải quyết vấn đề này bằng cách nào?**
+   > Giả thuyết hiện tại là họ tự thao tác trên Grab/Be hoặc ứng dụng tương tự, gọi tổng đài taxi, nhờ người thân đặt hộ, hoặc trì hoãn/không tự thực hiện chuyến đi. PRD chưa có interview để xác nhận alternative nào phổ biến nhất.
 
-| Viết quá rộng | Viết sắc hơn |
-|---|---|
-| Giúp SME dùng AI để marketing | Giúp chủ shop online phản hồi câu hỏi trước mua hàng nhanh và nhất quán trong giờ cao điểm |
-| Dùng AI để làm slide | Tạo bản nháp deck nội bộ mạch lạc cho buổi họp gấp trong thời gian rất ngắn |
-| AI cho tuyển dụng | Giúp recruiter sàng lọc CV đầu vào nhanh hơn trước vòng gọi sơ bộ |
+## Bước 2 — `Market Context`
 
-> Nếu bạn không mô tả được **một hoàn cảnh cụ thể**, khả năng cao bạn đang viết quá rộng.
+1. **Ai đang gặp vấn đề này?**
+   > Người lớn tuổi hoặc người ít thành thạo smartphone, đặc biệt khi thị lực, khả năng nhập liệu hoặc khả năng xử lý giao diện nhiều bước bị hạn chế.
 
----
+2. **Vấn đề xuất hiện trong hoàn cảnh nào?**
+   > Khi họ cần tự sắp xếp chuyến đi, ví dụ đi bệnh viện, nhưng phải nhập hoặc chọn địa chỉ, kiểm tra điểm đón/điểm đến, sửa lỗi và nhận diện đúng xe trong một giao diện thiên về thị giác.
 
-## Bước 1 — Viết `Project Snapshot`
+3. **Hiện tại họ đang dùng giải pháp thay thế nào?**
+   > App gọi xe truyền thống, tổng đài taxi, nhờ người thân/người chăm sóc đặt hộ, hoặc tự đi bằng phương tiện khác. Đây vẫn là danh sách giả thuyết cần kiểm chứng với người dùng thật.
 
-### Tóm tắt dự án trong 3 dòng
+4. **Vì sao đây là thời điểm đáng giải?**
+   > STT, TTS và LLM tiếng Việt hiện có thể hỗ trợ hội thoại tự nhiên tốt hơn trước, nhưng việc tự động hóa một hành động có rủi ro vẫn cần guardrail rõ. Đây là cơ hội kiểm chứng liệu kết hợp AI hiểu hội thoại với state machine kiểm soát an toàn có giúp người dùng tự chủ hơn hay không.
 
-1. **Nhóm tôi đang nghĩ mình đang giải quyết vấn đề gì?**  
-   > ___________________________________
+### Tóm tắt market context
 
-2. **Người dùng chính hiện nhóm đang nhắm tới là ai?**  
-   > ___________________________________
-
-3. **Hiện tại người dùng đó đang giải quyết vấn đề này bằng cách nào?**  
-   > ___________________________________
-
----
-
-## Bước 2 — Viết `Market Context`
-
-Ở đây chưa cần solution. Chỉ cần bối cảnh thị trường đủ để hiểu:
-**ai đang gặp chuyện gì, trong hoàn cảnh nào, và vì sao bây giờ đáng giải.**
-
-### Trả lời 4 câu ngắn
-
-1. **Ai đang gặp vấn đề này?**  
-   > ___________________________________
-
-2. **Vấn đề xuất hiện trong hoàn cảnh nào?**  
-   > ___________________________________
-
-3. **Hiện tại họ đang dùng giải pháp thay thế nào?**  
-   > ___________________________________
-
-4. **Vì sao đây là thời điểm đáng giải?**  
-   > ___________________________________
-
-### Tóm tắt market context trong 3-4 dòng
-
-> _______________________________________________  
-> _______________________________________________
-
----
+> Thị trường không nên được định nghĩa là “thị trường voice booking app”, mà là nhóm người gặp hạn chế thao tác số đang cố sắp xếp phương tiện để di chuyển an toàn và tự chủ. Họ hiện phải ghép nhiều giải pháp hoặc phụ thuộc người khác. Cơ hội của dự án nằm ở việc giảm effort và sai sót trong các bước có nhiều thông tin, đồng thời không lấy mất quyền kiểm soát của user.
 
 ## Bước 3 — Xác định `Job Executor`
 
-`Job executor` là người **trực tiếp dùng một giải pháp để hoàn thành job**.
-
-### Đừng nhầm với:
-
-- người mua tiền nhưng không trực tiếp làm job
-- người ảnh hưởng quyết định
-- cả một công ty hay một phòng ban quá rộng
-
-### Gợi ý viết cho đúng
-
-- Sai hoặc quá rộng: `SME`, `doanh nghiệp`, `thị trường`
-- Tốt hơn: `chủ shop online`, `nhân viên CSKH`, `recruiter`, `sales ops manager`
-
-### Điền
-
-- **Job executor của dự án này là:** ___________________________________
-- **Vì sao tôi tin đây là người trực tiếp "thuê" giải pháp để làm job:**  
-  > ___________________________________
-
----
+- **Job executor của dự án này là:** Người lớn tuổi hoặc ít thành thạo công nghệ đang trực tiếp tự sắp xếp chuyến đi của mình.
+- **Vì sao tôi tin đây là người trực tiếp "thuê" giải pháp để làm job:**
+  > Chính họ xác định nhu cầu di chuyển, cung cấp điểm đón/điểm đến, chọn phương tiện, kiểm tra thông tin, yêu cầu sửa và quyết định xác nhận chuyến. Người thân có thể là buyer, influencer hoặc người hỗ trợ, nhưng không phải job executor trong lát cắt này.
 
 ## Bước 4 — Viết `Core JTBD`
 
-`Core JTBD` là công việc cốt lõi người dùng đang cố hoàn thành.
-
-### Công thức gợi ý
-
-```text
-[verb] + [object] + [contextual clarifier]
-```
-
-### Ví dụ
-
-- Chưa tốt: `trả lời inbox bằng AI`
-- Tốt hơn: `giải quyết câu hỏi trước mua hàng nhanh và chính xác trong giờ cao điểm`
-
-- Chưa tốt: `dùng AI để viết nội dung`
-- Tốt hơn: `tạo bản nháp nội dung chiến dịch phù hợp với brand trong thời gian rất ngắn`
-
-### 3 tiêu chí tự kiểm
-
-- [ ] Nếu bỏ tool hiện tại đi, job này vẫn còn tồn tại
-- [ ] Trong câu không có tên sản phẩm, AI, chatbot, app, màn hình
-- [ ] Câu đang mô tả **điều user muốn hoàn thành**, không phải thứ product đang làm
-
 ### Bản nháp 1
 
-**Core JTBD bản nháp:**  
-> _______________________________________________
+**Core JTBD bản nháp:**
+> Đặt xe bằng giọng nói để đi đúng nơi an toàn.
 
 ### Gạch bỏ từ solution nếu có
 
-- Các từ solution tôi đang lỡ nhét vào câu: _________________________________
+- Các từ solution tôi đang lỡ nhét vào câu: `đặt xe`, `bằng giọng nói`.
 
 ### Bản chốt
 
-**Core JTBD cuối cùng:**  
-> _______________________________________________
+**Core JTBD cuối cùng:**
+> Sắp xếp phương tiện để di chuyển từ điểm đón đến đúng điểm đến một cách an toàn và tự chủ khi khả năng nhập hoặc kiểm tra thông tin bị hạn chế.
 
----
+### Tự kiểm
+
+- [x] Nếu bỏ V-VoiceRide, voice hay AI, job này vẫn tồn tại.
+- [x] Câu không chứa tên sản phẩm, AI, chatbot, app hoặc giao diện.
+- [x] Câu mô tả điều user muốn hoàn thành, không mô tả tính năng.
 
 ## Bước 5 — Viết 3 `Job Stories`
 
-Nếu `core JTBD` là job ở mức cốt lõi, thì `job story` giúp bạn thấy
-**job này xuất hiện trong hoàn cảnh nào**.
-
-### Format
-
-```text
-When [trigger], I want to [motivation], so I can [outcome].
-```
-
-### Ví dụ
-
-`When inbox đổ dồn vào buổi tối, tôi muốn có câu trả lời nhất quán ngay lập tức, so I can không mất đơn vì phản hồi chậm.`
-
-### Bảng 3 job stories
-
 | # | Trigger / When | Motivation / I want to | Outcome / so I can | Điều story này cho thấy |
 |---|---|---|---|---|
-| JS1 | | | | |
-| JS2 | | | | |
-| JS3 | | | | |
+| JS1 | Khi cần tự đi bệnh viện nhưng khó nhập một địa chỉ dài trên điện thoại | Tôi muốn truyền đạt rõ nơi đón và nơi cần đến, rồi kiểm tra lại hệ thống đã hiểu đúng | Tôi có thể tự sắp xếp chuyến đi mà không phải nhờ người thân | Giá trị cảm xúc và chức năng cùng nằm ở sự tự chủ, không chỉ ở tốc độ |
+| JS2 | Khi phát hiện điểm đón hoặc điểm đến được hiểu sai trước lúc xác nhận | Tôi muốn sửa đúng phần sai mà không phải cung cấp lại toàn bộ thông tin | Tôi giảm công sức, tránh bối rối và không tạo nhầm chuyến | Correction là một phần cốt lõi của job, không phải edge feature |
+| JS3 | Khi phương tiện sắp tới và tôi cần nhận diện đúng xe | Tôi muốn nhận lại thông tin tài xế, màu xe, biển số và trạng thái một cách rõ ràng | Tôi có thể lên đúng xe và cảm thấy an toàn hơn | Job chưa kết thúc ở “booking created”; user còn phải xác định đúng phương tiện |
 
 ### Tự kiểm nhanh
 
-- [ ] Mỗi story là một **tình huống thật**, không phải slogan chung chung
-- [ ] 3 story không trùng hệt nhau
-- [ ] Sau khi đọc 3 story, tôi hình dung được lúc nào product của mình đáng xuất hiện
-
----
+- [x] Mỗi story mô tả một tình huống cụ thể.
+- [x] Ba story đại diện cho ba thời điểm khác nhau: khởi tạo, sửa lỗi và nhận diện xe.
+- [x] Các story là giả thuyết dựa trên PRD và cần phỏng vấn để kiểm chứng tần suất, mức đau.
 
 ## Bước 6 — Liệt kê `Current Alternatives`
 
-Qua JTBD lens, đối thủ không chỉ là app cùng ngành.
-Đối thủ là **bất kỳ thứ gì user đang "thuê" để làm job**:
-
-- thao tác tay
-- file Excel / Google Sheets
-- intern / nhân viên
-- agency
-- ChatGPT / Claude / Gemini
-- công cụ chuyên dụng khác
-- hoặc thậm chí là **không làm gì cả**
-
-### Bảng alternatives
-
 | Alternative hiện tại | User đang thuê nó để làm gì? | Nó làm tốt gì? | Nó fail ở đâu? | Switching cost hiện tại cao hay thấp? |
 |---|---|---|---|---|
-| Alt 1 | | | | |
-| Alt 2 | | | | |
-| Alt 3 | | | | |
+| Tự dùng Grab/Be hoặc app gọi xe tương tự | Tìm chuyến, nhập địa chỉ, xem giá/ETA và theo dõi tài xế | Hệ sinh thái thật, nhiều tài xế, quen thuộc, có bản đồ và thanh toán | Có thể tạo tải nhận thức cao; phụ thuộc nhập liệu, đọc màn hình và tự sửa lỗi | Cao ở giá trị marketplace và thói quen; thấp nếu chỉ xét giao diện hỗ trợ |
+| Nhờ người thân/người chăm sóc đặt hộ | Chuyển phần thao tác và kiểm tra cho người đáng tin | Linh hoạt, có người xử lý tình huống và giải thích | Làm giảm tự chủ, phụ thuộc người khác có mặt/online và có thể truyền đạt sai | Cao về niềm tin; thấp nếu user thật sự muốn tự làm |
+| Gọi tổng đài taxi hoặc gọi trực tiếp hãng xe | Nói nhu cầu cho nhân viên và nhận xe | Giao tiếp bằng giọng nói quen thuộc, không cần học app | Chờ đợi, khó kiểm tra trực quan, chất lượng phụ thuộc tổng đài và vẫn có thể nghe/truyền đạt sai địa chỉ | Trung bình |
 
-### Kết luận nhanh
+**Nếu project của tôi biến mất hôm nay, user nhiều khả năng sẽ quay về:**
+> Nhờ người thân đặt hộ nếu họ thiếu tự tin; nếu vẫn muốn tự làm, họ sẽ dùng app gọi xe hiện có hoặc gọi tổng đài. Thứ tự này là giả thuyết cần được xác nhận qua interview.
 
-**Nếu project của tôi biến mất hôm nay, user nhiều khả năng sẽ quay về:**  
-> _______________________________________________
+## Bước 7 — `JTBD Lite Map`
 
----
-
-## Bước 7 — Điền `JTBD Lite Map`
-
-Đây là bản rút gọn của `job map` trong playbook.
-
-### Mục tiêu
-
-Không phải để làm consultant workshop hoàn chỉnh.  
-Mục tiêu là nhìn ra:
-
-1. workflow hiện tại của user đi qua những bước nào
-2. bước nào đang đau nhất
-3. AI có nên chen vào đó không
-
-### 8 bước tham chiếu từ playbook
-
-1. `Define`
-2. `Locate`
-3. `Prepare`
-4. `Confirm`
-5. `Execute`
-6. `Monitor`
-7. `Modify`
-8. `Conclude`
-
-> Không nhất thiết bước nào cũng quan trọng như nhau trong dự án của bạn.  
-> Nếu ít liên quan, ghi `N/A`, đừng để trống.
-
-### Bảng JTBD Lite Map
+> Job map dưới đây mô tả điều user cố hoàn thành, không mô tả màn hình hay state machine của V-VoiceRide.
 
 | Step | Trong workflow này user đang cố làm gì? | Hôm nay họ đang dùng gì? | Friction / pain hiện tại | Mức đau |
 |---|---|---|---|---|
-| Define | | | | Low / Med / High |
-| Locate | | | | Low / Med / High |
-| Prepare | | | | Low / Med / High |
-| Confirm | | | | Low / Med / High |
-| Execute | | | | Low / Med / High |
-| Monitor | | | | Low / Med / High |
-| Modify | | | | Low / Med / High |
-| Conclude | | | | Low / Med / High |
+| Define | Xác định mục tiêu chuyến đi, thời điểm, điểm đón, điểm đến và nhu cầu phương tiện | Trí nhớ, giấy ghi chú, hỏi người thân, app bản đồ | Có thể không biết địa chỉ chính xác hoặc khó diễn đạt đủ yêu cầu | Med |
+| Locate | Tìm đúng địa chỉ và phương án vận chuyển phù hợp | App gọi xe, bản đồ, tìm kiếm web, hỏi người thân/tổng đài | Địa danh mơ hồ, nhiều chi nhánh/lối vào, chữ nhỏ và nhiều lựa chọn | High |
+| Prepare | Chuẩn bị thông tin và điều kiện cần để yêu cầu chuyến | Nhập địa chỉ, bật vị trí, chuẩn bị điện thoại/tài khoản/phương thức trả | Nhập liệu dài, quyền truy cập, thông tin phân tán và dễ quên bước | Med |
+| Confirm | Kiểm tra phương tiện, điểm đón, điểm đến, ETA/chi phí trước khi cam kết | Đọc summary trên màn hình hoặc nghe nhân viên nhắc lại | Dễ bỏ sót thông tin sai; một nút xác nhận có thể bị bấm khi chưa hiểu rõ | High |
+| Execute | Gửi yêu cầu và bảo đảm chuyến đã được ghi nhận | Bấm đặt xe trên app hoặc xác nhận với tổng đài/người thân | Không chắc yêu cầu đã thành công; dễ nhầm trạng thái đang xử lý với đã đặt | Med |
+| Monitor | Theo dõi phương tiện được gán, vị trí/ETA và trạng thái đến đón | Bản đồ, thông báo, cuộc gọi tài xế | Khó đọc bản đồ/thông báo, khó biết khi nào xe tới hoặc có thay đổi | Med |
+| Modify | Sửa điểm đón, điểm đến, loại xe hoặc xử lý khi thông tin sai/thay đổi | Quay lại form, hủy và đặt lại, gọi tài xế/tổng đài/người thân | Dễ mất thông tin đúng, phải làm lại nhiều bước, sợ tạo nhầm chuyến | High |
+| Conclude | Xác định đúng xe và bắt đầu chuyến đi an toàn | Đọc biển số/màu xe, nhìn tài xế, gọi điện đối chiếu | Chữ/biển số khó nhìn, nhiều xe giống nhau, nguy cơ lên nhầm xe | High |
 
 ### Chốt 2 bước đau nhất
 
-**Bước đau nhất #1:** _________________________________  
-**Bước đau nhất #2:** _________________________________
+**Bước đau nhất #1:** `Locate` — xác định và chọn đúng điểm đón/điểm đến
+**Bước đau nhất #2:** `Modify` — sửa đúng phần sai mà không làm lại từ đầu
 
-**Vì sao đây là nơi đáng chú ý nhất:**  
-> _______________________________________________  
-> _______________________________________________
-
----
+**Vì sao đây là nơi đáng chú ý nhất:**
+> Hai bước này kết hợp mức effort cao với hậu quả lớn nếu sai. Locate sai làm toàn bộ chuyến đi sai ngay từ đầu; Modify kém khiến user mất kiểm soát đúng lúc họ đã biết hệ thống hiểu sai. Confirm và Conclude cũng là bước an toàn quan trọng, nhưng cần guardrail và read-back hơn là để AI tự quyết định.
 
 ## Bước 8 — Chỉ ra `AI Leverage Point`
 
-Sau khi map workflow, mới hỏi:
-**AI nên vào đâu, với vai trò gì, và vì sao là ở đó?**
-
-### Nhắc nhanh
-
-- Đừng nhét AI vào chỉ vì "có AI thì nghe hay"
-- Nếu pain lớn nhất không nằm ở chỗ AI giải tốt, hãy thành thật ghi ra
-- Nếu current alternative đã đủ tốt, project cần xem lại
-
-### Bảng leverage point
-
 | Step | AI nên giúp bằng cách nào? | Vì sao AI hợp ở đây? | Rủi ro chính nếu dùng AI |
 |---|---|---|---|
-| 1 | | | |
-| 2 | | | |
+| Locate | Hiểu cách nói địa chỉ tự nhiên, trích xuất điểm đón/điểm đến, phát hiện thiếu hoặc mơ hồ và diễn đạt câu hỏi làm rõ ngắn gọn | Input ngôn ngữ có nhiều biến thể; LLM phù hợp để hiểu intent/context, còn geocoding cung cấp candidate có cấu trúc | AI tự đoán địa chỉ hoặc chọn candidate sai; STT nghe sai tên riêng/địa danh |
+| Modify | Hiểu user muốn sửa slot nào và giá trị mới là gì, đồng thời giữ nguyên phần thông tin không liên quan | Yêu cầu sửa bằng lời nói thường không theo form cố định; hiểu ngữ nghĩa giúp giảm việc phải làm lại toàn bộ | Cập nhật nhầm slot, làm mất state cũ hoặc diễn giải quá mức ý của user |
 
-### Kết luận nhanh
+**AI leverage point quan trọng nhất của dự án tôi là:**
+> Hiểu và sửa thông tin chuyến đi từ ngôn ngữ tự nhiên ở hai bước Locate và Modify, sau đó chuyển kết quả có cấu trúc cho state machine kiểm tra.
 
-**AI leverage point quan trọng nhất của dự án tôi là:**  
-> _______________________________________________
-
-**Vì sao không phải ở bước khác:**  
-> _______________________________________________
-
----
+**Vì sao không phải ở bước khác:**
+> Ở Confirm và Execute, vấn đề chính là consent và kiểm soát rủi ro; AI không nên tự quyết định. State machine phải chặn booking khi thiếu slot, địa chỉ còn mơ hồ hoặc chưa có xác nhận rõ. Ở Monitor/Conclude, TTS và dữ liệu có cấu trúc hữu ích hơn việc để LLM suy đoán.
 
 ## Bước 9 — Viết `Product Hypothesis`
 
-Bây giờ mới đến lúc viết hypothesis.
+**Bản hypothesis của tôi:**
 
-### Công thức gợi ý
-
-```text
-Nếu chúng ta giúp [job executor] làm [job / sub-job] tốt hơn ở bước [x],
-bằng cách [AI leverage],
-thì họ sẽ chuyển từ [current alternative] sang [hướng giải pháp của nhóm],
-vì [giá trị rõ nhất].
-```
-
-### Bản hypothesis của tôi
-
-> _______________________________________________  
-> _______________________________________________
+> Nếu chúng ta giúp người lớn tuổi hoặc ít thành thạo công nghệ xác định và sửa thông tin chuyến đi tốt hơn ở các bước Locate và Modify, bằng cách dùng AI hiểu hội thoại tiếng Việt nhưng bắt buộc mọi dữ liệu rủi ro đi qua geocoding, read-back và state machine, thì họ sẽ có xu hướng chuyển từ nhờ người thân hoặc vật lộn với form app sang một luồng hội thoại safety-first, vì họ có thể tự hoàn thành chuyến với ít thao tác hơn mà vẫn kiểm soát được thông tin trước khi xác nhận.
 
 ### Tín hiệu sớm nếu hypothesis này đúng
 
-1. _______________________________________________
-2. _______________________________________________
+1. Trong usability test, ít nhất 80% người tham gia thuộc lát cắt có thể hoàn thành scenario hợp lệ, và correction success đạt ít nhất 70% mà không cần người hỗ trợ thao tác thay.
+2. Người tham gia đánh giá mức tin tưởng/tự chủ từ 4/5 trở lên và chủ động chọn luồng này thay vì nhờ người thân trong ít nhất một tình huống thử nghiệm phù hợp.
 
----
-
-## Bước 10 — Liệt kê `Assumptions to Validate`
-
-Job story chưa có research vẫn chỉ là **giả thuyết tốt hơn**, chưa phải sự thật.
-
-### 5 assumption thường đáng kiểm
-
-- Tôi đã chọn đúng `job executor`
-- Pain này thật sự đủ đau và xảy ra đủ thường xuyên
-- User sẽ đổi khỏi alternative hiện tại nếu có giải pháp tốt hơn
-- AI thực sự tạo giá trị ở step tôi chọn
-- User đủ tin kết quả AI để đưa vào workflow thật
-
-### Bảng assumptions
+## Bước 10 — `Assumptions to Validate`
 
 | Assumption | Vì sao assumption này rủi ro? | Tôi đang có bằng chứng gì? | Cần validate bằng cách nào tiếp theo? |
 |---|---|---|---|
-| A1 | | | |
-| A2 | | | |
-| A3 | | | |
-| A4 | | | |
-| A5 | | | |
+| A1. Người lớn tuổi/ít rành công nghệ là job executor phù hợp và thật sự muốn tự đặt chuyến | Có thể người thân mới là người luôn thực hiện job; user không muốn hoặc không được phép tự làm | Persona và journey trong PRD, chưa có user research | Phỏng vấn 5-8 người dùng mục tiêu và 3-5 người chăm sóc; hỏi về chuyến gần nhất, không hỏi họ có thích ý tưởng không |
+| A2. Locate và Modify là hai pain đủ lớn, xảy ra đủ thường xuyên | Team có thể đang ưu tiên edge case trong khi pain chính là giá, thiếu tài xế hoặc thanh toán | Các critical scenarios và risk analysis nội bộ trong PRD | Contextual interview/usability test trên app hiện tại; ghi số lần cần trợ giúp, lỗi và thời gian ở từng step |
+| A3. Voice/hội thoại giảm effort tốt hơn form hoặc accessibility mode hiện có | Môi trường ồn, giọng vùng miền hoặc STT sai có thể làm voice chậm và đáng sợ hơn | Technical concept và scenario test; chưa có so sánh người dùng | Prototype test A/B voice-first với form đơn giản; đo completion, correction, time, confidence và preference |
+| A4. User đủ tin hệ thống sau read-back và explicit confirmation | Việc AI nghe sai một lần có thể làm user mất niềm tin; câu xác nhận bắt buộc có thể gây khó nhớ | Safety invariants trong PRD, chưa có bằng chứng hành vi | Test nhiều cách read-back/xác nhận; quan sát user có hiểu trạng thái và tự phát hiện lỗi hay không |
+| A5. User sẽ chuyển khỏi alternative hiện tại dù MVP chưa gọi xe thật | Một demo booking không tạo đủ giá trị để kiểm chứng switching; marketplace và độ tin cậy của app hiện tại là moat lớn | Chưa có bằng chứng; MVP chủ yếu chứng minh interaction | Test concierge hoặc clickable prototype nối với quy trình đặt xe có người hỗ trợ; hỏi lựa chọn trên tình huống thật và willingness to adopt |
 
 ### Assumption nguy hiểm nhất nếu tôi đang sai
 
-> _______________________________________________
+> A1: người dùng mục tiêu thật sự muốn và có khả năng tự sắp xếp chuyến đi. Nếu họ luôn muốn người thân/tổng đài chịu trách nhiệm, hoặc nhu cầu tự chủ không đủ mạnh, thì dù voice và safety flow hoạt động tốt, product hypothesis vẫn không tạo ra adoption.
 
----
-
-## Bước 11 — Share trong bàn (3')
+## Bước 11 — Share trong bàn
 
 ### Mỗi người / mỗi nhóm chỉ nói 4 thứ
 
@@ -435,8 +193,6 @@ Job story chưa có research vẫn chỉ là **giả thuyết tốt hơn**, chư
 | | | |
 | | | |
 
----
-
 ## Bước 12 — Chốt version cuối sau thảo luận
 
 ### Sau khi nghe phản biện, tôi thay đổi gì?
@@ -452,47 +208,40 @@ Job story chưa có research vẫn chỉ là **giả thuyết tốt hơn**, chư
 
 ### Vì sao tôi giữ / sửa?
 
-> _______________________________________________  
+> _______________________________________________
 > _______________________________________________
 
 ### Version cuối cùng tôi nộp
 
-**Job executor:**  
+**Job executor:**
 > _______________________________________________
 
-**Core JTBD:**  
+**Core JTBD:**
 > _______________________________________________
 
-**2 bước đau nhất trong workflow:**  
+**2 bước đau nhất trong workflow:**
 > _______________________________________________
 
-**AI leverage point chính:**  
+**AI leverage point chính:**
 > _______________________________________________
 
-**Product hypothesis:**  
+**Product hypothesis:**
 > _______________________________________________
 
-**Assumption cần validate đầu tiên:**  
+**Assumption cần validate đầu tiên:**
 > _______________________________________________
-
----
 
 ## Checklist trước khi nộp
 
-- [ ] Tôi đã khoanh đúng 1 lát cắt cụ thể của dự án.
-- [ ] Tôi đã phân biệt được `job executor` với buyer / influencer.
-- [ ] `Core JTBD` của tôi không nhét solution vào câu.
-- [ ] Tôi đã viết đủ 3 `job stories`.
-- [ ] Tôi đã điền `JTBD lite map` và khoanh ra 2 bước đau nhất.
-- [ ] Tôi đã chỉ ra `AI leverage point` thay vì nhảy thẳng vào feature list.
-- [ ] Tôi đã ghi rõ `assumptions to validate`.
+- [x] Tôi đã khoanh đúng 1 lát cắt cụ thể của dự án.
+- [x] Tôi đã phân biệt được `job executor` với buyer / influencer.
+- [x] `Core JTBD` của tôi không nhét solution vào câu.
+- [x] Tôi đã viết đủ 3 `job stories`.
+- [x] Tôi đã điền `JTBD lite map` và khoanh ra 2 bước đau nhất.
+- [x] Tôi đã chỉ ra `AI leverage point` thay vì nhảy thẳng vào feature list.
+- [x] Tôi đã ghi rõ `assumptions to validate`.
 - [ ] Tôi đã sửa version cuối sau khi share trong bàn.
 
----
+## Kết luận tự kiểm
 
-## Nếu còn thời gian / làm về nhà
-
-- Phỏng vấn nhanh 1 người dùng thật để kiểm xem `job story` nào là sát nhất.
-- So sánh `current alternatives` với project của nhóm theo 3 tiêu chí: nhanh hơn, rẻ hơn, tin hơn.
-- Tự hỏi lại một câu khó: **nếu không dùng AI, project này còn tạo giá trị không?**
-- Nếu câu trả lời là "không", hãy xem lại liệu nhóm đang giải **job thật** hay chỉ đang tìm chỗ để nhét AI.
+> Nếu bỏ AI, dự án vẫn còn tạo giá trị ở read-back rõ ràng, giao diện dễ tiếp cận, sửa từng phần và guardrail xác nhận. AI làm tăng giá trị chủ yếu ở khả năng hiểu cách diễn đạt tự nhiên và correction linh hoạt; nó không phải nguồn quyết định an toàn cuối cùng.

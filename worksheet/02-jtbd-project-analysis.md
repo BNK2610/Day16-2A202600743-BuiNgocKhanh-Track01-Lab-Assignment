@@ -189,47 +189,50 @@ companion-reference: Strategyn_JTBD_Playbook.pdf (giảng viên gửi kèm)
 
 | Ý phản biện tôi nghe được | Nó chạm vào phần nào? | Tôi sẽ giữ / sửa gì? |
 |---|---|---|
-| | | |
-| | | |
-| | | |
+| Nhóm “người lớn tuổi hoặc ít thành thạo công nghệ” vẫn khá rộng; mức suy giảm thị lực, kinh nghiệm dùng app và mức sẵn sàng tự đặt xe có thể rất khác nhau. Cần khóa rõ bối cảnh sử dụng thay vì coi toàn bộ nhóm có cùng hành vi. | `Job executor`, lát cắt người dùng và assumption A1 | Giữ nhóm primary persona theo PRD nhưng thu hẹp lát cắt cuối thành người lớn tuổi/ít rành app đang cần tự sắp xếp chuyến đi bệnh viện và gặp khó ở việc nhập, kiểm tra hoặc sửa địa chỉ. Tiếp tục coi mong muốn tự chủ là assumption cần validate, không xem là fact. |
+| `Locate` và `Modify` hợp lý theo logic sản phẩm, nhưng hiện mới được suy ra từ PRD. Có thể pain thật của user lại là giá, thiếu xe, thanh toán, sợ đi một mình hoặc muốn người thân chịu trách nhiệm. | Hai pain step và mức độ ưu tiên | Tạm giữ `Locate` và `Modify` làm hai pain cần thiết kế test, đồng thời ghi rõ cần contextual interview/usability test để xác nhận tần suất và mức đau trước khi đầu tư sâu. |
+| Product hypothesis hiện gộp quá nhiều điều: AI hiểu đúng, guardrail hoạt động, user hoàn thành được, cảm thấy tin tưởng và chuyển khỏi alternative. Nếu test thất bại sẽ khó biết giả định nào sai. | `Product hypothesis`, success signal và kế hoạch validate | Sửa hypothesis cuối theo hướng hẹp hơn: kiểm tra liệu luồng hội thoại có giúp user hoàn thành tác vụ với ít trợ giúp hơn và giữ cảm giác kiểm soát hay không. Việc chuyển khỏi app/người thân được giữ thành assumption riêng để test sau. |
 
 ## Bước 12 — Chốt version cuối sau thảo luận
 
 ### Sau khi nghe phản biện, tôi thay đổi gì?
 
 - [ ] Giữ nguyên `job executor`
-- [ ] Sửa `job executor`
-- [ ] Giữ nguyên `core JTBD`
+- [x] Sửa `job executor`
+- [x] Giữ nguyên `core JTBD`
 - [ ] Sửa `core JTBD`
-- [ ] Giữ nguyên `AI leverage point`
+- [x] Giữ nguyên `AI leverage point`
 - [ ] Sửa `AI leverage point`
 - [ ] Giữ nguyên `product hypothesis`
-- [ ] Sửa `product hypothesis`
+- [x] Sửa `product hypothesis`
 
 ### Vì sao tôi giữ / sửa?
 
-> _______________________________________________
-> _______________________________________________
+> Tôi giữ `core JTBD` vì câu hiện tại mô tả kết quả người dùng muốn hoàn thành — di chuyển đúng nơi, an toàn và tự chủ — mà không phụ thuộc vào voice, AI hay sản phẩm V-VoiceRide. Tôi cũng giữ `AI leverage point` ở Locate và Modify vì hiểu cách diễn đạt địa chỉ tự nhiên và yêu cầu sửa từng phần là nơi AI có lợi thế rõ nhất; các quyết định an toàn cuối vẫn thuộc về geocoding, read-back và state machine.
+>
+> Tôi sửa `job executor` để khóa rõ hơn bối cảnh đi bệnh viện và loại khó khăn mà người dùng đang gặp, thay vì coi mọi người lớn tuổi hoặc ít rành công nghệ là một nhóm đồng nhất. Tôi sửa `product hypothesis` vì bản trước gộp quá nhiều giả định và tuyên bố switching quá sớm. Bản cuối tập trung vào kết quả có thể kiểm chứng trước: mức độ hoàn thành tác vụ, nhu cầu trợ giúp và cảm giác kiểm soát. Các kết luận này vẫn là giả thuyết dựa trên PRD, chưa phải bằng chứng hành vi từ người dùng thật.
 
 ### Version cuối cùng tôi nộp
 
 **Job executor:**
-> _______________________________________________
+> Người lớn tuổi hoặc ít thành thạo ứng dụng đặt xe đang trực tiếp cần tự sắp xếp chuyến đi bệnh viện và gặp khó khăn khi nhập, kiểm tra hoặc sửa thông tin chuyến đi trên điện thoại.
 
 **Core JTBD:**
-> _______________________________________________
+> Sắp xếp phương tiện để di chuyển từ điểm đón đến đúng điểm đến một cách an toàn và tự chủ khi khả năng nhập hoặc kiểm tra thông tin bị hạn chế.
 
 **2 bước đau nhất trong workflow:**
-> _______________________________________________
+> `Locate`: xác định và chọn đúng điểm đón, điểm đến khi địa chỉ dài, không đầy đủ hoặc mơ hồ.
+>
+> `Modify`: sửa đúng phần thông tin bị hiểu sai mà không phải cung cấp lại toàn bộ yêu cầu hoặc bắt đầu lại từ đầu.
 
 **AI leverage point chính:**
-> _______________________________________________
+> Dùng AI để hiểu cách người dùng diễn đạt điểm đón, điểm đến và yêu cầu sửa bằng tiếng Việt tự nhiên tại các bước Locate và Modify. Kết quả phải được chuyển thành dữ liệu có cấu trúc để geocoding, read-back và state machine kiểm tra; AI không được tự chọn địa chỉ mơ hồ hoặc tự quyết định tạo booking.
 
 **Product hypothesis:**
-> _______________________________________________
+> Nếu người lớn tuổi hoặc ít thành thạo ứng dụng đặt xe có thể cung cấp và sửa thông tin chuyến đi bằng hội thoại tiếng Việt, đồng thời được nghe lại và xác nhận rõ trước khi tạo booking, thì họ sẽ hoàn thành kịch bản tự sắp xếp chuyến đi với ít trợ giúp hơn và cảm thấy kiểm soát, an toàn hơn so với khi tự thao tác trên form ứng dụng.
 
 **Assumption cần validate đầu tiên:**
-> _______________________________________________
+> Người dùng trong lát cắt này thực sự muốn tự sắp xếp chuyến đi và sẵn sàng chịu trách nhiệm xác nhận thông tin, thay vì luôn muốn người thân hoặc tổng đài thực hiện và chịu trách nhiệm thay họ.
 
 ## Checklist trước khi nộp
 
@@ -240,7 +243,7 @@ companion-reference: Strategyn_JTBD_Playbook.pdf (giảng viên gửi kèm)
 - [x] Tôi đã điền `JTBD lite map` và khoanh ra 2 bước đau nhất.
 - [x] Tôi đã chỉ ra `AI leverage point` thay vì nhảy thẳng vào feature list.
 - [x] Tôi đã ghi rõ `assumptions to validate`.
-- [ ] Tôi đã sửa version cuối sau khi share trong bàn.
+- [x] Tôi đã sửa version cuối sau khi share trong bàn.
 
 ## Kết luận tự kiểm
 
